@@ -10,11 +10,20 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
+
+
+
+
 from pathlib import Path
 import environ
 
-env=environ.Env(DEBUG=(bool,False),)
+env=environ.Env(
+    DEBUG=(bool,False),
+)
 environ.Env.read_env()
+
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -25,7 +34,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 DEBUG=env('DEBUG')
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('SECRET_KEY')
+SECRET_KEY=env('SECRET_KEY')
 
 
 
@@ -63,7 +72,7 @@ ROOT_URLCONF = 'Django_Project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'Django_Project','templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

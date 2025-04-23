@@ -1,9 +1,10 @@
 {% extends 'templates/layout.html' %}
+{% load static %}
 
 {% block content %}
     <div class="row">
         <div class="col-md-12">
-            <h1>Resume App</h1>
+            <h1 class="myHeader">Resume App</h1>
         </div>
     </div>
     <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam debitis eligendi eveniet ex fugiat in laudantium nulla numquam obcaecati officia omnis optio provident quisquam rem repudiandae sit tempore, tenetur voluptate!</span><span>Accusamus atque, dolorum eaque error inventore, maiores natus nobis odio praesentium quae quibusdam recusandae repudiandae similique tempora, vel velit vitae? Aperiam enim, et eum ipsum iusto minima odit quae totam!</span><span>Ab aliquam aperiam at deserunt doloremque doloribus fugiat illum impedit ipsa iste maxime nobis odit praesentium ratione repellendus sapiente, sed sunt tempore veniam voluptates. Dolore incidunt maiores necessitatibus quae similique.</span><span>Asperiores minus quidem ullam veniam voluptas. Aliquid, asperiores consectetur dolore error esse explicabo illo ipsam molestiae molestias natus odio porro, quam, quia quisquam quos recusandae voluptates. Explicabo natus nisi tempore?</span><span>A accusamus ad adipisci, consequuntur debitis delectus deleniti dolore eius eos error eum fugiat incidunt maiores molestiae molestias nemo odio, optio qui quisquam soluta totam ut veniam veritatis vero vitae?</span><span>Ad culpa cum deserunt fugit id in, laudantium, magni molestiae, natus non numquam omnis ratione soluta. Commodi dicta earum exercitationem illo impedit minima provident quam repellendus ullam. Aspernatur distinctio, nulla.</span><span>Amet aspernatur atque doloremque error excepturi id illo illum impedit ipsum iste iusto laboriosam magni maiores molestias natus nemo, nesciunt officia omnis quo quos sit sunt tempora vel veritatis voluptates.</span><span>Adipisci atque autem dicta ducimus eaque illo iste iusto, magnam, natus, nisi odit officia quasi similique vel voluptates. Aut doloribus earum illo iure maiores numquam voluptas. Dolorem ipsa nulla repellat!</span><span>A ab commodi, debitis deserunt distinctio dolor dolorem dolores eos hic id illum, in iste itaque maiores minima neque nesciunt perferendis porro quae quia quidem quisquam repellendus unde voluptatem voluptatum?</span><span>Animi asperiores corporis dignissimos dolor doloremque dolorum eaque eius ex facere impedit, incidunt inventore iure laboriosam magni mollitia nulla officiis quasi quia, quibusdam quod repellat saepe tempora temporibus ut voluptatibus!</span></p>
@@ -11,7 +12,8 @@
     <div class="card mb-3" style="max-width: 540px;">
   <div class="row g-0">
     <div class="col-md-4">
-      <img src="https://placehold.co/350x400/FFFFFF/000000.png" class="card-img-top" alt="...">
+      <img src="{% get_media_prefix %}userlogo.png" class="card-img-top" alt="...">
+
 
     </div>
     <div class="col-md-8">

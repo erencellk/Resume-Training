@@ -12,6 +12,6 @@ def contact(request):
         message = request.POST.get('message')
 
         print(f"İletişim Formu: {name} - {email} - {subject} - {message}")
-        messages.success(request, 'Your message has been sent.')
+        messages.success(request, 'Your message has been sent!.')
         return redirect('/#contact')
     return redirect('/#contact')

@@ -7,8 +7,9 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>MYCv</title>
-    <meta content="" name="description">
-    <meta content="" name="keywords">
+    <meta content="{{ site_description }}" name="description">
+    <meta content="{{ site_keywords }}" name="keywords">
+    <meta content="Eren ÇELİK" name="author">
 
 
     <link href="{% static 'img/cv_favicon.png' %}" rel="icon">
@@ -40,7 +41,7 @@
     <nav id="navmenu" class="navmenu">
         <ul>
             <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i><span>Home</span></a></li>
-            <li><a href="#about"><i class="bi bi-person navicon"></i><span>About</span></a></li>
+            <li><a href="#about"><i class="bi bi-person navicon"></i><span>About Me</span></a></li>
             <li><a class="education-btn" href="#resume"><i
                     class="bi bi-file-earmark-text"></i><span>Education</span></a></li>
             <li><a href="#services"><i class="bi bi-hdd-stack navicon"></i><span>Capabilities</span></a></li>
@@ -60,7 +61,7 @@
         <div class="container" data-aos="zoom-out">
             <div class="row justify-content-center">
                 <div class="col-lg-9">
-                    <h2>EREN ÇELİK</h2>
+                    <h2>{{ home_banner_name }}</h2>
                     <p>I'm <span class="typed"
                                  data-typed-items="Developer, Web Designer, Software Engineer">Developer</span><span
                             class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
@@ -81,11 +82,8 @@
 
 
         <div class="container section-title" data-aos="fade-up">
-            <h2>About</h2>
-            <p>I am a 3rd-year Information Systems Engineering student at Piri Reis University. I am passionate about
-                web development, graphical user interface design, and embedded systems programming. I have completed and
-                ongoing projects in these fields. I am a motivated and solution-oriented individual with a strong
-                interest in learning new technologies and working collaboratively.</p>
+            <h2>About Me</h2>
+            <p>{{ home_banner_description }}</p>
         </div>
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -338,9 +336,7 @@
         <!-- Section Title -->
         <div class="container section-title" data-aos="fade-up">
             <h2>Capabilities</h2>
-            <p>I offer a wide range of development services, combining technical expertise and design thinking to build
-                responsive websites, intuitive user interfaces, and seamless API integrations. Each solution is tailored
-                to deliver performance, usability, and scalability.</p>
+            <p>{{ about_me_capabilities }}</p>
         </div><!-- End Section Title -->
 
         <div class="container">

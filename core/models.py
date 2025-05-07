@@ -1,8 +1,8 @@
+from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
 
 
 # Create your models here.
-
 
 
 class AbstractModel(models.Model):
@@ -19,7 +19,6 @@ class AbstractModel(models.Model):
 
     class Meta:
         abstract = True
-
 
 
 class GeneralSetting(AbstractModel):
@@ -48,7 +47,6 @@ class GeneralSetting(AbstractModel):
 
     )
 
-
     def __str__(self):
         return f'General Setting: {self.name}'
 
@@ -56,8 +54,6 @@ class GeneralSetting(AbstractModel):
         verbose_name = 'General Setting'
         verbose_name_plural = 'General Settings'
         ordering = ['name', ]
-
-
 
 
 class ImageSetting(AbstractModel):
@@ -92,3 +88,25 @@ class ImageSetting(AbstractModel):
         verbose_name = 'Image Setting'
         verbose_name_plural = 'Image Settings'
         ordering = ['name', ]
+
+
+class Skill(AbstractModel):
+    order = models.IntegerField(
+        default=0,
+        verbose_name='Order',
+    )
+    name = models.CharField(
+        default='',
+        max_length=254,
+        blank=True,
+        verbose_name='Name',
+        help_text='This is the name of the setting.'
+
+    )
+    percentage = models.CharField(
+        default=50,
+        max_length=254,
+        verbose_name='Percentage',
+        validators=[MinValueValidator(0), MaxValueValidator(100)],
+
+    )

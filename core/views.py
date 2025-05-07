@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from core.models import GeneralSetting, ImageSetting
+from core.models import GeneralSetting, ImageSetting, Skill
 
 
 def index(request):
@@ -15,6 +15,8 @@ def index(request):
     home_favicon= ImageSetting.objects.get(name='home_favicon').file
     personal_picture = ImageSetting.objects.get(name='personal_picture').file
 
+    skills = Skill.objects.all().order_by('order')
+
 
     context = {
         'site_title': site_title,
@@ -25,6 +27,7 @@ def index(request):
         'about_me_capabilities': about_me_capabilities,
         'home_favicon': home_favicon,
         'personal_picture': personal_picture,
+        'skills': skills,
     }
     return render(request, 'templates/index.html' , context=context)
 

@@ -12,7 +12,7 @@
     <meta content="Eren ÇELİK" name="author">
 
 
-    <link href="{% static 'img/cv_favicon.png' %}" rel="icon">
+    <link href="{{ home_favicon.url }}" rel="icon">
     <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
 
 
@@ -90,7 +90,7 @@
 
             <div class="row gy-4 justify-content-center">
                 <div class="col-lg-4">
-                    <img src="{% static 'img/personal_pıcture.jpg' %}" class="img-fluid" alt="personal_picture">
+                    <img src="{{ personal_picture.url }}" class="img-fluid" alt="personal_picture">
 
                 </div>
                 <div class="col-lg-8 content">

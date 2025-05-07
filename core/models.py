@@ -4,7 +4,25 @@ from django.db import models
 # Create your models here.
 
 
-class GeneralSetting(models.Model):
+
+class AbstractModel(models.Model):
+    updated_date = models.DateTimeField(
+        blank=True,
+        auto_now=True,
+        verbose_name='Updated Date'
+    )
+    created_date = models.DateTimeField(
+        blank=True,
+        auto_now_add=True,
+        verbose_name='Created Date'
+    )
+
+    class Meta:
+        abstract = True
+
+
+
+class GeneralSetting(AbstractModel):
     name = models.CharField(
         default='',
         max_length=254,
@@ -29,16 +47,7 @@ class GeneralSetting(models.Model):
         help_text='This is the parameter of the setting.'
 
     )
-    updated_date = models.DateTimeField(
-        blank=True,
-        auto_now=True,
-        verbose_name='Updated Date'
-    )
-    created_date = models.DateTimeField(
-        blank=True,
-        auto_now_add=True,
-        verbose_name='Created Date'
-    )
+
 
     def __str__(self):
         return f'General Setting: {self.name}'
@@ -51,7 +60,7 @@ class GeneralSetting(models.Model):
 
 
 
-class ImageSetting(models.Model):
+class ImageSetting(AbstractModel):
     name = models.CharField(
         default='',
         max_length=254,
@@ -75,16 +84,7 @@ class ImageSetting(models.Model):
         upload_to='images',
 
     )
-    updated_date = models.DateTimeField(
-        blank=True,
-        auto_now=True,
-        verbose_name='Updated Date'
-    )
-    created_date = models.DateTimeField(
-        blank=True,
-        auto_now_add=True,
-        verbose_name='Created Date'
-    )
+
     def __str__(self):
         return f'Image Setting: {self.name}'
 

@@ -154,36 +154,36 @@
         </div>
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">
-    <div class="skills-content skills-animation">
-        {% for skill in skills %}
-            {% if forloop.counter0|divisibleby:2 %}
-                <div class="row">
-            {% endif %}
+            <div class="skills-content skills-animation">
+                {% for skill in skills %}
+                    {% if forloop.counter0|divisibleby:2 %}
+                        <div class="row">
+                    {% endif %}
 
-            <div class="col-lg-6">
-                <div class="progress">
+                <div class="col-lg-6">
+                    <div class="progress">
                     <span class="skill">
                         <span>{{ skill.name }}</span>
                         <i class="val">{{ skill.percentage }}%</i>
                     </span>
-                    <div class="progress-bar-wrap">
-                        <div class="progress-bar"
-                             role="progressbar"
-                             aria-valuenow="{{ skill.percentage }}"
-                             aria-valuemin="0"
-                             aria-valuemax="100"
-                             style="width: {{ skill.percentage }}%;">
+                        <div class="progress-bar-wrap">
+                            <div class="progress-bar"
+                                 role="progressbar"
+                                 aria-valuenow="{{ skill.percentage }}"
+                                 aria-valuemin="0"
+                                 aria-valuemax="100"
+                                 style="width: {{ skill.percentage }}%;">
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            {% if forloop.counter|divisibleby:2 or forloop.last %}
-                </div>
-            {% endif %}
-        {% endfor %}
-    </div>
-</div>
+                {% if forloop.counter|divisibleby:2 or forloop.last %}
+                    </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
 
 
     </section>
@@ -270,7 +270,7 @@
                             <li>A modern interface was designed to adapt to different screen sizes. Users can easily and
                                 intuitively browse shoes, view their details, and add them to the cart.
                             </li>
-                            <li></li>
+
                         </ul>
                     </div>
 
@@ -311,106 +311,20 @@
 
             <div class="row gy-4">
 
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-item item-cyan position-relative">
-                        <div class="icon">
-                            <a class="button" href="https://github.com/erencellk" target="_blank">
-                                <img class="menu" src="{% static 'img/menu/availability-svgrepo-com (1) (1).jpg' %}"
-                                     alt="avability">
-                            </a>
+                {% for item in capabilities %}
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="service-item item-orange position-relative">
+                            <div class="icon">
+                                <a class="button" href="{{ item.link }}" target="_blank">
+                                    <img class="menu" src="{{ item.image.url }}" alt="{{ item.name }}">
+                                </a>
+                            </div>
+                            <h3>{{ item.name }}</h3>
+                            <p>{{ item.text }}</p>
                         </div>
-
-                        <h3>Web Development</h3>
-
-                        <p>I design and build responsive and dynamic websites using HTML, CSS, JavaScript, and Django.
-                            My focus is on clean code and functional design.</p>
                     </div>
-                </div><!-- End Service Item -->
+                {% endfor %}
 
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-item item-orange position-relative">
-                        <div class="icon">
-                            <a class="button" href="https://github.com/erencellk" target="_blank">
-                                <img class="menu" src="{% static 'img/menu/multiple-defenses-svgrepo-com.jpg' %}"
-                                     alt="multiple">
-                            </a>
-                        </div>
-
-                        <h3>UI/UX Design</h3>
-
-                        <p>I create intuitive and modern user interfaces with a focus on accessibility and usability,
-                            using Figma, CSS animations, and Bootstrap.</p>
-                    </div>
-                </div><!-- End Service Item -->
-
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-item item-teal position-relative">
-                        <div class="icon">
-                            <a class="button" href="https://github.com/erencellk" target="_blank">
-                                <img class="menu" src="{% static 'img/menu/api-interface-svgrepo-com (1).jpg' %}"
-                                     alt="api">
-                            </a>
-                        </div>
-
-                        <h3>API Integration</h3>
-
-                        <p>I develop and integrate RESTful APIs for seamless backend communication, using tools like
-                            Postman and Django REST Framework.</p>
-                    </div>
-                </div><!-- End Service Item -->
-
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-                    <div class="service-item item-red position-relative">
-                        <div class="icon">
-                            <a class="button" href="https://github.com/erencellk" target="_blank">
-                                <img class="menu" src="{% static 'img/menu/safe-and-stable-svgrepo-com.jpg' %}"
-                                     alt="safe_stable">
-                            </a>
-                        </div>
-
-                        <h3>Problem Solving & Algorithms</h3>
-
-                        <p>I build algorithmic solutions and automation scripts using Python and C. Topics include
-                            matrix operations, calculators, and encryption.</p>
-
-                    </div>
-                </div><!-- End Service Item -->
-
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-                    <div class="service-item item-indigo position-relative">
-                        <div class="icon">
-                            <a class="button" href="https://github.com/erencellk" target="_blank">
-                                <img class="menu" src="{% static 'img/menu/machine-vision-svgrepo-com.jpg' %}"
-                                     alt="machine-vision">
-                            </a>
-
-                        </div>
-
-                        <h3>Embedded Systems</h3>
-
-                        <p>I work with microcontrollers and sensors to build real-time systems and IoT prototypes.
-                            Projects include Arduino and STM32 boards.</p>
-
-                    </div>
-                </div><!-- End Service Item -->
-
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-                    <div class="service-item item-pink position-relative">
-                        <div class="icon">
-                            <a class="button" href="https://github.com/erencellk" target="_blank">
-                                <img class="menu" src="{% static 'img/menu/flexible-access-svgrepo-com.jpg' %}"
-                                     alt="flexible">
-                            </a>
-
-                        </div>
-
-                        <h3>Database Management</h3>
-
-                        <p>I design and manage relational databases using SQL, PostgreSQL, and SQLite, with an emphasis
-                            on data consistency and optimization.</p>
-
-                    </div>
-                </div><!-- End Service Item -->
 
             </div>
 

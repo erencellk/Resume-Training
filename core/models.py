@@ -118,3 +118,19 @@ class Skill(AbstractModel):
         verbose_name = 'Skill'
         verbose_name_plural = 'Skills'
         ordering = ['order', ]
+
+
+class Capabilities(AbstractModel):
+    order = models.IntegerField(default=0, verbose_name='Order')
+    name = models.CharField(max_length=254, verbose_name='Title', default='')
+    text = models.TextField(verbose_name='Description', default='')
+    image = models.ImageField(upload_to='capabilities/', verbose_name='Image', blank=True, null=True)
+    link = models.URLField(verbose_name='Link', default='https://github.com/', blank=True)
+
+    def __str__(self):
+        return f'Capabilities Setting: {self.name}'
+
+    class Meta:
+        verbose_name = 'Capability'
+        verbose_name_plural = 'Capabilities Settings'
+        ordering = ['name']

@@ -42,3 +42,12 @@ class CapabilitiesAdmin(admin.ModelAdmin):
 
     class Meta:
         model = Capabilities
+
+@admin.register(Message)
+class MessageAdmin(admin.ModelAdmin):
+    list_display = ['id', 'order', 'name', 'email', 'phone', 'message']
+    search_fields = ['name']
+
+
+    class Meta:
+        model = Message

@@ -134,3 +134,48 @@ class Capabilities(AbstractModel):
         verbose_name = 'Capability'
         verbose_name_plural = 'Capabilities Settings'
         ordering = ['name']
+
+
+from django.db import models
+
+
+class Message(models.Model):
+    name = models.CharField(
+        max_length=254,
+        blank=False,
+        verbose_name='Name',
+        help_text='Name of the sender.'
+    )
+
+    order = models.PositiveIntegerField(
+        default=0,
+        verbose_name='Order',
+        help_text='Ordering position for this entry.'
+    )
+
+    email = models.EmailField(
+        max_length=254,
+        blank=False,
+        verbose_name='Email',
+        help_text='Email address of the sender.'
+    )
+    phone = models.CharField(
+        max_length=20,
+        blank=True,
+        null=True,
+        verbose_name='Phone',
+        help_text='Phone number of the sender (optional).'
+    )
+    message = models.TextField(
+        blank=False,
+        verbose_name='Message',
+        help_text='Content of the message.'
+    )
+
+    def __str__(self):
+        return f'Message: {self.name}'
+
+    class Meta:
+        verbose_name = 'Message'
+        verbose_name_plural = 'Messages'
+        ordering = ['order', ]
